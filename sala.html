@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <div class="status-modelo p-3 text-center">
+            <h2>Status do Modelo</h2>
+            <p id="status-text" class="lead">Modelo carregando...</p>
+        </div>
+    </div>
+
+    <!-- Texto sobre detecção de objetos -->
+    <div class="container mt-4">
+        <div class="objetos-detectados p-3 text-center">
+            <h3>Detecção de Objetos</h3>
+            <p id="detected-objects-text" class="lead">Nenhum objeto detectado.</p>
+        </div>
+    </div>
+
+    <!-- Div que conterá o canvas -->
+    <div class="container text-center mt-4">
+        <div id="myCanvas"></div>
+    </div>
+
+    <!-- Botão "Sair" -->
+    <div class="container text-center mt-4">
+        <button class="btn btn-danger btn-lg" onclick="sair()">Sair</button>
+    </div>
+
+    <script>
+        function sair() {
+            window.location = "index.html";
+        }
+
+        // Atualizando o status do modelo e a detecção de objetos
+        document.getElementById('status-text').innerText = "Modelo pronto!";
+        document.getElementById('detected-objects-text').innerText = "2 objetos detectados na imagem.";
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #00f7ff, #09856a);
+        }
+
+        /* Estilo para a div de status do modelo */
+        .status-modelo {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-size: 1.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        /* Estilo para a div de detecção de objetos */
+        .objetos-detectados {
+            background-color: #fff3cd;
+            color: #856404;
+            font-size: 1.3rem;
+            border: 1px solid #ffeeba;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        /* Estilo para o botão de sair */
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+        }
+
+        /* Ajuste de fundo */
+        body {
+            background-color: #e9ecef;
+        }
+    </style>
+
+    <script>
+        let img;
+
+        function preload() {
+            img = loadImage('b7d1cb73f8eded9509ec425aeb30ee3f.jpg');
+        }
+
+        function setup() {
+            let canvas = createCanvas(900, 600);
+            canvas.parent('myCanvas');
+        }
+
+        function draw() {
+            background(255);
+            image(img, 0, 0, 900, 600);
+
+            // Ajustando estilo do texto
+            textSize(18);
+            fill(0);
+            noStroke();
+
+            // Destacando a cama
+            stroke(0, 0, 255);
+            strokeWeight(3);
+            noFill();
+            rect(370, 200, 330, 140);  // Retângulo da cama
+            noStroke();
+            text("Cama", 500, 700); // Texto da cama
+
+            // Destacando o armário
+            stroke(0, 0, 255);
+            noFill();
+            rect(530, 66, 250, 140); // Retângulo do armário
+            noStroke();
+            text("Armário", 100, 140); // Texto do armário
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

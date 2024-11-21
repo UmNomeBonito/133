@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Objetos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #b700ff, #ff9900);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .button-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .button-list li {
+            margin: 10px 0;
+        }
+
+        .button-list button {
+            font-size: 16px;
+            padding: 10px 20px;
+            width: 250px;
+            border: none;
+            border-radius: 50px;
+            background-color: rgb(73, 111, 168);
+            color: black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button-list button:hover {
+            background-color: #0059ff;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detector de Objetos da BernardSistem</h1>
+        <ul class="button-list">
+            <li><button onclick="QuartoIr()">Quarto</button></li>
+            <li><button onclick="TVir()">Televisão e Ar Condicionado</button></li>
+            <li><button onclick="Mesa()">Mesa</button></li>
+            <li><button onclick="garrafas()">Garrafas</button></li>
+            <li><button onclick="cesta_de_frutas()">Cesta de Frutas</button></li>
+        </ul>
+    </div>
+
+    <script>
+        function QuartoIr() {
+            window.location = "quarto.html";
+        }
+
+        function TVir() {
+            window.location = "sala.html";
+        }
+        function Mesa() {
+            window.location = "mesa.html";
+        }
+        function garrafas()
+        {
+            window.location = "garrafas.html";
+        }
+        function cesta_de_frutas()
+        {
+            window.location = "cesta.html";
+        }
+    </script>
+</body>
+</html>
